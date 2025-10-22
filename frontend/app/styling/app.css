@@ -1,0 +1,84 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@theme {
+  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+  /* StoryCanvas Blue-Purple Palette */
+  --color-primary-50: #f2f7fc;
+  --color-primary-100: #e0eff9;
+  --color-primary-200: #bdddf3;
+  --color-primary-300: #91c6ea;
+  --color-primary-400: #65a0d8; /* main blue */
+  --color-primary-500: #5090cf;
+  --color-primary-600: #3d7ebf;
+  --color-primary-700: #3269a1;
+  --color-primary-800: #295682;
+  --color-primary-900: #204568;
+
+  --color-secondary-50: #f8f6fa;
+  --color-secondary-100: #f0ecf6;
+  --color-secondary-200: #dcd2ea;
+  --color-secondary-300: #c3b2da;
+  --color-secondary-400: #a992c5;
+  --color-secondary-500: #77619d; /* main purple */
+  --color-secondary-600: #68538c;
+  --color-secondary-700: #584579;
+  --color-secondary-800: #493861;
+  --color-secondary-900: #3b2d4c;
+
+  --color-primary: var(--color-primary-400);
+  --color-secondary: var(--color-secondary-500);
+}
+
+/* Base Styles */
+html,
+body {
+  @apply bg-white dark:bg-gray-950 text-gray-800 dark:text-gray-100;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+
+  @media (prefers-color-scheme: dark) {
+    color-scheme: dark;
+  }
+}
+
+/* Custom Utilities */
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary-400 to-secondary-500 bg-clip-text text-transparent;
+  }
+
+  .bg-gradient {
+    @apply bg-gradient-to-r from-primary-400 to-secondary-500;
+  }
+
+  .bg-gradient-dark {
+    @apply bg-gradient-to-r from-primary-600 to-secondary-600;
+  }
+
+  .glass-effect {
+    @apply bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border border-white/20 dark:border-gray-700/50;
+  }
+
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-xl;
+  }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
