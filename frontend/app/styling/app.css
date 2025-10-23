@@ -44,6 +44,15 @@ body {
   }
 }
 
+.header-gradient {
+  background: linear-gradient(
+    90deg,
+    rgba(95, 61, 137, 1) 0%,
+    rgba(85, 97, 170, 1) 50%,
+    rgba(70, 153, 223, 1) 100%
+  );
+}
+
 /* Custom Utilities */
 @layer utilities {
   .text-gradient {

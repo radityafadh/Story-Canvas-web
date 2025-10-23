@@ -1,6 +1,7 @@
+import type { Route } from "./+types/home";
 import { SignIn } from "../pages/auth/signin";
 
-export function meta() {
+export function meta({}: Route.MetaArgs) {
   return [
     { title: "Sign In - StoryCanvas" },
     { name: "description", content: "Sign in to your StoryCanvas account to continue creating and sharing stories." },
