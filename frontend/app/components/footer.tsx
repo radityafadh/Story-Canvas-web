@@ -2,7 +2,6 @@
 
 import React from "react";
 import { NavLink } from "react-router-dom";
-import Logo from "../assets/Logo_Story_Canvas.svg";
 
 export function Footer() {
   return (
@@ -16,7 +15,7 @@ export function Footer() {
           <div className="w-full md:w-1/4 mb-8 md:mb-0">
             <div className="flex items-center space-x-3">
               {/* Logo ditambahkan kembali di sebelah judul */}
-              <img src={Logo} alt="Logo" className="w-8 h-8" /> 
+              <img src="/Logo_Story_Canvas.svg" alt="Logo" className="w-8 h-8" /> 
               <h2 className="text-3xl font-semibold">StoryCanvas</h2>
             </div>
           </div>

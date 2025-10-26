@@ -2,11 +2,10 @@
 
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import Logo from "../assets/Logo_Story_Canvas.svg";
 
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(true); // Change this based on actual auth state
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // Change this based on actual auth state
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const userName = "Betari Safira";
 
@@ -32,7 +31,7 @@ export function Header() {
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
         {/* Logo & Title */}
         <div className="flex items-center space-x-3">
-          <img src={Logo} alt="Logo" className="w-8 h-8" />
+          <img src="/Logo_Story_Canvas.svg" alt="Logo" className="w-8 h-8" />
           <h1 className="text-xl font-semibold">StoryCanvas</h1>
         </div>
 
