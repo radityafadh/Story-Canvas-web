@@ -6,5 +6,7 @@ export default [
   route("Signup", "routes/signup.tsx"),
   route("Chat", "routes/chat.tsx"),
   route("History", "routes/history.tsx"),
-  route("About", "routes/about.tsx"),
+  route("UserStoryPage", "routes/userstory.tsx"),
+  route("UserStoryEditPage", "routes/userstory.edit.tsx"),
+  route("About", "routes/About.tsx")
 ] satisfies RouteConfig;
