@@ -1,5 +1,5 @@
 import type { Route } from "./+types/signup";
-import { SignUp } from "../pages/auth/signup";
+import SignUp from "../pages/auth/signup";
 
 export function meta({}: Route.MetaArgs) {
   return [
