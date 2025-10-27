@@ -14,7 +14,7 @@ export default function UserStoryPage() {
 
   const handleAccept = () => {
     // Navigate to history after accepting, adjust as needed
-    navigate("/history");
+    navigate("/WireframeGenerated");
   };
 
   return (
