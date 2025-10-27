@@ -1,8 +1,17 @@
 import React from "react";
 import { Header } from "../../components/header";
 import { Footer } from "../../components/footer";
+import { useNavigate } from "react-router-dom";
 
 export default function SignIn() {
+  const navigate = useNavigate();
+
+  // ✅ Fungsi handle login (sementara front-end only)
+  const handleSignIn = (e: React.FormEvent) => {
+    e.preventDefault(); 
+    navigate("/");  
+  };
+
   return (
     <div className="flex flex-col min-h-screen font-sans">
       <Header />
@@ -27,7 +36,7 @@ export default function SignIn() {
             <h2 className="text-secondary font-bold text-2xl mb-2">StoryCanvas</h2>
             <h3 className="text-primary font-bold text-3xl mb-8">Sign In</h3>
 
-            <form className="flex flex-col space-y-6">
+            <form onSubmit={handleSignIn} className="flex flex-col space-y-6">
               <div>
                 <label className="block text-primary mb-2 font-medium">Username</label>
                 <input
@@ -46,6 +55,7 @@ export default function SignIn() {
                 />
               </div>
 
+              {/* ✅ Button navigates to Home when clicked */}
               <button
                 type="submit"
                 className="w-full py-3 bg-primary text-white font-bold rounded-full hover:bg-primary-500 transition hover-lift"
@@ -56,7 +66,7 @@ export default function SignIn() {
 
             <p className="text-center text-sm text-gray-400 mt-4">
               Doesn’t have an account?{" "}
-              <a href="/signup" className="text-primary hover:underline">
+              <a href="/Signup" className="text-primary hover:underline">
                 Sign Up!
               </a>
             </p>
