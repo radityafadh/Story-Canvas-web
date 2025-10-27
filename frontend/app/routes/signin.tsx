@@ -1,4 +1,4 @@
-import type { Route } from "./+types/home";
+import type { Route } from "./+types/signin";
 import { SignIn } from "../pages/auth/signin";
 
 export function meta({}: Route.MetaArgs) {

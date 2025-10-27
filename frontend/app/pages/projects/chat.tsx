@@ -2,6 +2,8 @@
 import React from "react";
 import { Header } from "../../components/header";
 import { Footer } from "../../components/footer";
+import { NavLink } from "react-router-dom";
+
 
 export default function InputProject() {
   return (
@@ -75,11 +77,20 @@ export default function InputProject() {
         </section>
 
         {/* Submit Button (Bottom Right, well-spaced) */}
-        <div className="absolute bottom-10 right-12">
-          <button className="bg-gradient text-white font-semibold px-8 py-3 rounded-full hover-lift shadow-md">
-            Submit Project
-          </button>
-        </div>
+       <div className="absolute bottom-10 right-12">
+      <NavLink
+        to="/UserStoryPage"
+        end
+        className={({ isActive }) =>
+          [
+            "bg-gradient text-white font-semibold px-8 py-3 rounded-full shadow-md inline-block hover-lift",
+            isActive ? "ring-2 ring-white/30" : ""
+          ].join(" ")
+        }
+      >
+        Submit Project
+      </NavLink>
+    </div>
       </main>
 
       <Footer />
