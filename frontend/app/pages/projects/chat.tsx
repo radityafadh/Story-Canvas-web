@@ -13,7 +13,7 @@ export default function InputProject() {
       <main className="flex-grow px-8 py-10 max-w-4xl mx-auto animate-fade-in-up relative pb-32">
         {/* Title */}
         <h1 className="text-4xl font-extrabold mb-10 text-center text-gray-900 dark:text-gray-100">
-          INPUT YOUR PROJECT DESCRIPTION!
+          Input Your Project Description!
         </h1>
 
         {/* Main Goal */}

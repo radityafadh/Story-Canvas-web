@@ -11,5 +11,8 @@ export default [
   route("WireframeGenerated", "routes/wireframegenerated.tsx"),
   route("UserStoryPage", "routes/userstory.tsx"),
   route("UserStoryEditPage", "routes/userstory-edit.tsx"),
-  route("HistoryDetail", "routes/HistoryDetail.tsx"),
+  route("HistoryDetail", "routes/historydetail.tsx"),
+  route("UserStoryScenario", "routes/userstoryscenario.tsx"),
+  route("UserStoryScenarioEdit", "routes/userstoryscenario-edit.tsx"),
+  route("Export", "routes/export.tsx"),
 ] satisfies RouteConfig;

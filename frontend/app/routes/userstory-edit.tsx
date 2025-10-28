@@ -1,5 +1,5 @@
 import type { Route } from "./+types/userstoryedit";
-import UserStoryEditPage from "../pages/projects/userstory-edit";
+import UserStoryEditPage from "../pages/user-stories/userstory-edit";
 
 export function meta({}: Route.MetaArgs) {
   return [

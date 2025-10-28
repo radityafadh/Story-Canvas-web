@@ -1,5 +1,5 @@
 import type { Route } from "./+types/history";
-import History from "../pages/onboarding/history";
+import History from "../pages/projects/history";
 
 export function meta({}: Route.MetaArgs) {
   return [

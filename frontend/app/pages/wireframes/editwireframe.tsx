@@ -21,19 +21,27 @@ export default function EditWireframe() {
 
   const [activeAI, setActiveAI] = useState(false);
   const [selectedHtml, setSelectedHtml] = useState("");
+  const [aiInput, setAiInput] = useState("");
 
   const toggleAI = (html: string) => {
     setSelectedHtml(html);
-    setActiveAI(!activeAI);
+    setActiveAI(true);
   };
 
   const handleBack = () => {
-    navigate(-1); // kembali ke halaman sebelumnya
+    navigate(-1);
   };
 
   const handleSubmit = () => {
-    alert("Wireframe telah disubmit!");
-    navigate("/WireframeGenerated"); // optional: arahkan ke halaman lain setelah submit
+    navigate("/WireframeGenerated");
+  };
+
+  const handleAISubmit = () => {
+    if (!aiInput.trim()) return;
+
+    // Future: send to AI API, update HTML, etc.
+    setAiInput("");
+    setActiveAI(false);
   };
 
   return (
@@ -93,7 +101,7 @@ export default function EditWireframe() {
                 />
               </div>
 
-              {/* AI Helper */}
+              {/* AI Helper Button */}
               <div className="flex justify-end">
                 <button
                   onClick={() => toggleAI(wf.html)}
@@ -106,7 +114,7 @@ export default function EditWireframe() {
           ))}
         </div>
 
-        {/* Submit Button */}
+        {/* --- Only Submit Button (AI button removed) --- */}
         <div className="flex justify-end mt-10 pb-6">
           <button
             onClick={handleSubmit}
@@ -127,23 +135,30 @@ export default function EditWireframe() {
                 ✕
               </button>
 
-              <h2 className="text-xl font-semibold mb-3 underline">Bantuan AI</h2>
+              <h2 className="text-xl font-semibold mb-3 underline">
+                Bantuan AI
+              </h2>
 
-              <div className="border border-gray-300 dark:border-gray-700 rounded-md h-60 p-3 overflow-y-auto bg-gray-50 dark:bg-gray-800">
+              <div className="border border-gray-300 dark:border-gray-700 rounded-md h-60 p-3 overflow-y-auto bg-gray-50 dark:bg-gray-800 mb-4">
                 <p className="text-gray-500 italic">
                   (Placeholder) Chat AI akan muncul di sini untuk membantu
                   memperbaiki HTML atau memberikan saran desain.
                 </p>
               </div>
 
-              <div className="mt-4 flex gap-2">
+              <div className="flex gap-2">
                 <input
                   type="text"
                   placeholder="Ketik pesan ke AI..."
+                  value={aiInput}
+                  onChange={(e) => setAiInput(e.target.value)}
                   className="flex-grow p-2 rounded-md border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 text-gray-800 dark:text-gray-100"
                 />
-                <button className="rounded-lg bg-gradient-to-r from-[#5561AA] to-[#4699DF] px-5 py-2 font-medium text-white shadow-sm transition hover:opacity-95">
-                  Kirim
+                <button
+                  onClick={handleAISubmit}
+                  className="rounded-lg bg-gradient-to-r from-[#5561AA] to-[#4699DF] px-5 py-2 font-medium text-white shadow-sm transition hover:opacity-95"
+                >
+                  Submit
                 </button>
               </div>
             </div>

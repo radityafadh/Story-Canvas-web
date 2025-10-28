@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 export default function WireframeGenerated() {
   const navigate = useNavigate();
 
-  // contoh data PNG yang nanti bisa berasal dari API
+  // example image data
   const [generatedImages] = useState([
     { id: 1, src: "/assets/generated1.png" },
     { id: 2, src: "/assets/generated2.png" },
@@ -14,9 +14,8 @@ export default function WireframeGenerated() {
   ]);
 
   const handleAccept = () => {
-    // Arahkan ke halaman berikutnya setelah menerima hasil wireframe
-    alert("Wireframe diterima!");
-  };
+    // Navigate or process here without alert
+    navigate("/UserStoryScenario");};
 
   const handleEdit = () => {
     navigate("/EditWireframe");
@@ -38,11 +37,12 @@ export default function WireframeGenerated() {
           </h2>
 
           <div className="rounded-2xl border border-gray-300 bg-white p-5 shadow-sm dark:border-gray-700 dark:bg-gray-900">
-            <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+            {/* Stack images vertically */}
+            <div className="flex flex-col gap-6">
               {generatedImages.map((img) => (
                 <div
                   key={img.id}
-                  className="overflow-hidden rounded-xl border border-gray-200 bg-gray-50 shadow-sm transition hover:scale-[1.02] dark:border-gray-700 dark:bg-gray-800"
+                  className="overflow-hidden rounded-xl border border-gray-200 bg-gray-50 shadow-sm transition hover:scale-[1.01] dark:border-gray-700 dark:bg-gray-800"
                 >
                   <img
                     src={img.src}
