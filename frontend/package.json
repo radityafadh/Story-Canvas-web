@@ -1,11 +1,15 @@
 {
+  "homepage": "https://radityafadh.github.io/Story-Canvas-web",
   "name": "storycanvas",
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "react-router build",
-    "dev": "react-router dev",
     "start": "react-router-serve ./build/server/index.js",
+    "build": "react-router build",
+    "build:static": "react-router build --output-static",
+    "predeploy": "npm run build:static",
+    "deploy": "gh-pages -d build/client",
+    "dev": "react-router dev",
     "typecheck": "react-router typegen && tsc"
   },
   "dependencies": {
